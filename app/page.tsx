@@ -3,7 +3,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, Mail } from "lucide-react"
-import { Package, Truck, Clock, Shield, CreditCard } from "lucide-react"
 import PartnersSlider from "@/components/partners-slider"
 import ContactForm from "@/components/contact-form"
 import TrackingForm from "@/components/tracking-form"
@@ -17,6 +16,33 @@ export default function Home() {
 
 function HomeContent() {
   const { t } = useLanguage()
+
+  const services = [
+    {
+      id: 1,
+      title: "Грузоперевозки",
+      description: "Международные и локальные грузоперевозки с полным документальным сопровождением.",
+      image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      id: 2,
+      title: "Таможенное оформление",
+      description: "Профессиональное таможенное оформление грузов и документов для международных перевозок.",
+      image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      id: 3,
+      title: "Туры",
+      description: "Организация туристических поездок и бизнес-туров с полным сопровождением.",
+      image: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=800&auto=format&fit=crop",
+    },
+    {
+      id: 4,
+      title: "Бизнес-услуги",
+      description: "Консалтинговые услуги для бизнеса, включая логистику, документооборот и оптимизацию процессов.",
+      image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=800&auto=format&fit=crop",
+    },
+  ]
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -110,58 +136,29 @@ function HomeContent() {
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">{t("services.title")}</h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <Package className="w-6 h-6 text-blue-600" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className="group relative overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl"
+              >
+                <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black/80 z-10"></div>
+                <Image
+                  src={service.image || "/placeholder.svg"}
+                  alt={service.title}
+                  width={800}
+                  height={500}
+                  className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+                  <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                  <p className="text-white/90 text-sm mb-4 max-w-md opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                    {service.description}
+                  </p>
+                  <div className="h-1 w-12 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-24"></div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Доставка посылок</h3>
-              <p className="text-gray-600">
-                Быстрая и надежная доставка посылок по всему Узбекистану и за его пределы.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <Truck className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Грузоперевозки</h3>
-              <p className="text-gray-600">
-                Транспортировка грузов различного объема с полным документальным сопровождением.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <Package className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Международная доставка</h3>
-              <p className="text-gray-600">Доставка посылок и грузов в любую точку мира с таможенным оформлением.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <Clock className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Экспресс-доставка</h3>
-              <p className="text-gray-600">Срочная доставка документов и небольших посылок в кратчайшие сроки.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Страхование грузов</h3>
-              <p className="text-gray-600">Полное страхование ваших отправлений для максимальной защиты.</p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                <CreditCard className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">Консалтинговые услуги</h3>
-              <p className="text-gray-600">Профессиональные консультации по логистике и организации перевозок.</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
