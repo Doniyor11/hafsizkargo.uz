@@ -20,26 +20,26 @@ function HomeContent() {
   const services = [
     {
       id: 1,
-      title: "Грузоперевозки",
-      description: "Международные и локальные грузоперевозки с полным документальным сопровождением.",
+      titleKey: "services.cargo.title",
+      descriptionKey: "services.cargo.description",
       image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop",
     },
     {
       id: 2,
-      title: "Таможенное оформление",
-      description: "Профессиональное таможенное оформление грузов и документов для международных перевозок.",
+      titleKey: "services.customs.title",
+      descriptionKey: "services.customs.description",
       image: "https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop",
     },
     {
       id: 3,
-      title: "Туры",
-      description: "Организация туристических поездок и бизнес-туров с полным сопровождением.",
+      titleKey: "services.tours.title",
+      descriptionKey: "services.tours.description",
       image: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=800&auto=format&fit=crop",
     },
     {
       id: 4,
-      title: "Бизнес-услуги",
-      description: "Консалтинговые услуги для бизнеса, включая логистику, документооборот и оптимизацию процессов.",
+      titleKey: "services.business.title",
+      descriptionKey: "services.business.description",
       image: "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=800&auto=format&fit=crop",
     },
   ]
@@ -145,15 +145,15 @@ function HomeContent() {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black/80 z-10"></div>
                 <Image
                   src={service.image || "/placeholder.svg"}
-                  alt={service.title}
+                  alt={t(service.titleKey)}
                   width={800}
                   height={500}
                   className="w-full h-[300px] object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+                  <h3 className="text-2xl font-bold mb-2">{t(service.titleKey)}</h3>
                   <p className="text-white/90 text-sm mb-4 max-w-md opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                    {service.description}
+                    {t(service.descriptionKey)}
                   </p>
                   <div className="h-1 w-12 bg-orange-500 rounded-full transition-all duration-300 group-hover:w-24"></div>
                 </div>

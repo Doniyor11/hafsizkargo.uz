@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     icon: [{ url: "/icon?v=1", sizes: "32x32", type: "image/png" }],
     apple: [{ url: "/apple-icon?v=1", sizes: "180x180", type: "image/png" }],
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 export default function RootLayout({
@@ -29,6 +29,8 @@ export default function RootLayout({
     </html>
   )
 }
+
+import "./globals.css"
 
 
 

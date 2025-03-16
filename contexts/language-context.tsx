@@ -91,6 +91,40 @@ const translations: Translations = {
     uz: "Kompaniya tashkil etilgan kundan boshlab, biz xizmatlarimizni doimiy takomillashtirish, innovatsion texnologiyalarni joriy etish va mijozlarga xizmat ko'rsatish sifatini oshirishga intilamiz.",
   },
 
+  // Services section
+  "services.cargo.title": {
+    ru: "Грузоперевозки",
+    uz: "Yuk tashish",
+  },
+  "services.cargo.description": {
+    ru: "Международные и локальные грузоперевозки с полным документальным сопровождением.",
+    uz: "To'liq hujjatli kuzatuv bilan xalqaro va mahalliy yuk tashish xizmatlari.",
+  },
+  "services.customs.title": {
+    ru: "Таможенное оформление",
+    uz: "Bojxona rasmiylashtiruvi",
+  },
+  "services.customs.description": {
+    ru: "Профессиональное таможенное оформление грузов и документов для международных перевозок.",
+    uz: "Xalqaro tashishlar uchun yuklarni va hujjatlarni professional bojxona rasmiylashtiruvi.",
+  },
+  "services.tours.title": {
+    ru: "Туры",
+    uz: "Sayohatlar",
+  },
+  "services.tours.description": {
+    ru: "Организация туристических поездок и бизнес-туров с полным сопровождением.",
+    uz: "To'liq kuzatuv bilan turistik sayohatlar va biznes-turlarni tashkil etish.",
+  },
+  "services.business.title": {
+    ru: "Бизнес-услуги",
+    uz: "Biznes xizmatlar",
+  },
+  "services.business.description": {
+    ru: "Консалтинговые услуги для бизнеса, включая логистику, документооборот и оптимизацию процессов.",
+    uz: "Logistika, hujjat aylanishi va jarayonlarni optimallashtirish kabi biznes uchun konsalting xizmatlari.",
+  },
+
   // Contact form
   "contact.title": {
     ru: "Связаться с нами",
