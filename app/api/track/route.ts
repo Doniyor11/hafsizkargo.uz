@@ -28,7 +28,7 @@ export async function POST(request: Request) {
 
     const auth = Buffer.from(`${username}:${password}`).toString("base64")
 
-    const response = await fetch(`http://cn23.uz:8855/cn23rofogroup/hs/InvoicesInformation/${trackingNumber}`, {
+    const response = await fetch(`http://cn23.uz:8855/hafsizkargo/hs/InvoicesInformation/${trackingNumber}`, {
       headers: {
         Authorization: `Basic ${auth}`,
         "Content-Type": "application/json",
