@@ -60,13 +60,24 @@ export default function TrackingForm() {
       }
 
       setTrackingResult(data.data)
+
+      // If there's a note about mock data, show it to the user
+      if (data.note) {
+        console.log(data.note)
+        setError(
+          language === "ru"
+            ? "Примечание: Используются тестовые данные из-за проблем с подключением к API"
+            : "Eslatma: API ulanishidagi muammolar tufayli sinov ma'lumotlaridan foydalanilmoqda",
+        )
+      }
     } catch (err) {
+      console.error("Error in tracking form:", err)
       setError(
         err instanceof Error
           ? err.message
           : language === "ru"
-            ? "Произошла ошибка при отслеживании"
-            : "Kuzatuv paytida xatolik yuz berdi",
+            ? "Произошла ошибка при отслеживании. Пожалуйста, попробуйте позже."
+            : "Kuzatuv paytida xatolik yuz berdi. Iltimos, keyinroq qayta urinib ko'ring.",
       )
       setTrackingResult(null)
     } finally {
